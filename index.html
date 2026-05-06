@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Fake News Detection</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <nav>
+      <h2>📰 Fake News Detection</h2>
+
+      <div>
+        <a href="/live-news">Live News</a>
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/history">History</a>
+        <a href="/admin">Admin</a>
+        <a href="/logout">Logout</a>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTAINER -->
+
+    <div class="main-container">
+      <div class="content-box">
+        <h1>AI Fake News Detection System</h1>
+
+        <p>
+          Detect whether the news is real or fake using Artificial Intelligence
+          and NLP.
+        </p>
+
+        <!-- FORM -->
+
+        <form action="/predict" method="POST">
+          <textarea
+            name="news"
+            placeholder="Paste complete news article here..."
+            required
+          >
+{{ news_text if news_text else '' }}</textarea
+          >
+
+          <button type="submit">Detect News</button>
+        </form>
+
+        <!-- RESULT -->
+
+        {% if prediction %}
+
+        <div class="result-box">{{ prediction }}</div>
+
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

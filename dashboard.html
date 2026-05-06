@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Dashboard</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='dashboard.css') }}"
+    />
+  </head>
+
+  <body>
+    <nav>
+      <h2>📊 Dashboard</h2>
+
+      <div>
+        <a href="/">Home</a>
+        <a href="/history">History</a>
+        <a href="/admin">Admin</a>
+        <a href="/logout">Logout</a>
+      </div>
+    </nav>
+
+    <div class="dashboard">
+      <div class="card">
+        <h1>{{ total }}</h1>
+
+        <p>Total Predictions</p>
+      </div>
+
+      <div class="card">
+        <h1>{{ fake }}</h1>
+
+        <p>Fake News</p>
+      </div>
+
+      <div class="card">
+        <h1>{{ real }}</h1>
+
+        <p>Real News</p>
+      </div>
+    </div>
+  </body>
+</html>

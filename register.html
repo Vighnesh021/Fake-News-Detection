@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Register</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- REGISTER CONTAINER -->
+
+    <div class="auth-container">
+      <div class="auth-box">
+        <h1>📰 Fake News Detection</h1>
+
+        <p>Create your account to access the AI Fake News Detection System</p>
+
+        <form method="POST">
+          <input
+            type="text"
+            name="username"
+            placeholder="Enter Username"
+            required
+          />
+
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter Password"
+            required
+          />
+
+          <button type="submit">Register</button>
+        </form>
+
+        <div class="bottom-text">
+          Already have an account?
+
+          <a href="/login"> Login </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

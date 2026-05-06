@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Live News</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='dashboard.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <nav>
+      <h2>📰 Live BBC News</h2>
+
+      <div>
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/history">History</a>
+        <a href="/logout">Logout</a>
+      </div>
+    </nav>
+
+    <!-- NEWS CONTAINER -->
+
+    <div class="table-box">
+      {% for article in articles %}
+
+      <div class="card">
+        <h2>{{ article.title }}</h2>
+
+        <p>{{ article.summary }}</p>
+
+        <!-- READ MORE -->
+
+        <a href="{{ article.link }}" target="_blank"> Read Full News </a>
+
+        <br /><br />
+
+        <!-- DETECT FORM -->
+
+        <form action="/detect-live-news" method="POST">
+          <input
+            type="hidden"
+            name="news"
+            value="{{ article.title }} {{ article.summary }}"
+          />
+
+          <button type="submit">Detect Fake/Real</button>
+        </form>
+      </div>
+
+      {% endfor %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Login</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- LOGIN CONTAINER -->
+
+    <div class="auth-container">
+      <div class="auth-box">
+        <h1>📰 Fake News Detection</h1>
+
+        <p>Login to continue to the AI Fake News Detection System</p>
+
+        <form method="POST">
+          <input
+            type="text"
+            name="username"
+            placeholder="Enter Username"
+            required
+          />
+
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter Password"
+            required
+          />
+
+          <button type="submit">Login</button>
+        </form>
+
+        <div class="bottom-text">
+          Don't have an account?
+
+          <a href="/register"> Register </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
